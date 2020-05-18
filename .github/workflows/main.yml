@@ -17,8 +17,8 @@ jobs:
             toolchain: nightly
             override: true
 
-        - name: Attempt to build ktgl-rs
-          uses: actions-rs/cargo@v1
-          with:
+      - name: Attempt to build ktgl rs
+        uses: actions-rs/cargo@v1
+        with:
             command: build
             args: --release
