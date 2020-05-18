@@ -2,8 +2,21 @@ use skyline::from_offset;
 
 // TODO
 #[repr(C)]
-pub struct Character {
-    test: u32,
+pub struct CharacterTable {
+    vtable: *mut u64,
+    entries: [CharacterSectionBlock; 1201],
+}
+
+#[repr(C)]
+pub struct CharacterTableEntry {
+    unk1: *mut u64,
+    block: *mut CharacterSectionBlock,
+    index: u64,
+}
+
+#[repr(C)]
+pub struct CharacterSectionBlock {
+    post_timeskip_model_scale: f32,
 }
 
 #[from_offset(0x3CAF30)]
