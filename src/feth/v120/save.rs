@@ -4,7 +4,7 @@ use skyline::from_offset;
 #[repr(C)]
 pub struct CharacterTable {
     vtable: *mut u64,
-    pub entries: [CharacterSectionBlock; 1201],
+    pub entries: [CharacterTableEntry; 1201],
 }
 
 #[repr(C)]
