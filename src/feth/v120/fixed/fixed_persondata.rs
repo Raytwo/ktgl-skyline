@@ -10,7 +10,7 @@ pub struct PersonBlock {
     unk2: u16,
     pub character_id: u16,
     pub asset_id: u16,
-    pub class_name_id: u8,
+    pub class_id: u8,
     pub age: u8,
     pub birth_month: u8,
     pub birthday_flag: bool,
@@ -35,6 +35,7 @@ pub struct PersonBlock {
     pub after_ts_height: u8,
     unk8: u16,
     pub character_stats: PersonStats,
+    padding: u16
 }
 
 #[repr(C)]
