@@ -14,19 +14,21 @@ impl<'a, T, const N: usize> FixedTable<'a, T, N> {
     
 }
 
-impl<'a, T, const N: usize> Index<usize> for FixedTable<'a, T, N> {
-    type Output = FixedTableEntry<'a, T>;
+// This can't enforce the strict array size of a FixedTable instance so this will have to go unused for now
 
-    fn index(&self, index: usize) -> &Self::Output {
-        self.entries.get(index).unwrap()
-    }
-}
+// impl<'a, T, const N: usize> Index<usize> for FixedTable<'a, T, N> {
+//     type Output = FixedTableEntry<'a, T>;
 
-impl<'a, T, const N: usize> IndexMut<usize> for FixedTable<'a, T, N> {
-    fn index_mut(&mut self, index: usize) -> &mut Self::Output {
-        self.entries.get_mut(index).unwrap()
-    }
-}
+//     fn index(&self, index: usize) -> &Self::Output {
+//         &self.entries.get(index).unwrap()
+//     }
+// }
+
+// impl<'a, T, const N: usize> IndexMut<usize> for FixedTable<'a, T, N> {
+//     fn index_mut(&mut self, index: usize) -> &mut Self::Output {
+//         self.entries.get_mut(index).unwrap()
+//     }
+// }
 
 #[repr(C)]
 pub struct FixedTableEntry<'a, T> {
