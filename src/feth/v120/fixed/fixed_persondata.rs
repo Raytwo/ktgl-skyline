@@ -67,7 +67,7 @@ pub enum PersonGender {
 #[repr(u8)]
 pub enum Class
 {
-    Noble = 0,
+    Noble,
     Commoner,
     Myrmidon,
     Soldier,
@@ -170,11 +170,11 @@ pub enum Class
 #[repr(u8)]
 pub enum AllegianceId
 {
-	ChurchofSeiros = 0,
+	ChurchOfSeiros = 0,
 	AdrestianEmpire = 1,
-	HolyKingdomofFaerghus = 2,
+	HolyKingdomOfFaerghus = 2,
 	LeicesterAlliance = 3,
-	ThoseWhoSlitherintheDark = 4,
+	ThoseWhoSlitherIntheDark = 4,
 	Almyra = 5,
 	WesternChurch = 6,
 	ResistanceArmy = 7,
@@ -183,7 +183,7 @@ pub enum AllegianceId
 	RebelArmy = 10,
 	Rogues = 11,
 	Citizens = 12,
-	ChildrenOftheGoddess = 13,
+	ChildrenOfTheGoddess = 13,
 	GiantBeasts = 14,
 	Independents = 15,
 	Mercenaries = 16,
