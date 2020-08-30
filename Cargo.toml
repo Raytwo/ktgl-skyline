@@ -8,3 +8,4 @@ edition = "2018"
 
 [dependencies]
 skyline = { git = "https://github.com/ultimate-research/skyline-rs.git" }
+num_enum = "0.5.1"

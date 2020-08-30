@@ -1,3 +1,6 @@
+use num_enum::TryFromPrimitive;
+use std::convert::TryFrom;
+
 /// "ts" in variable names stands for TimeSkip
 #[repr(C)]
 pub struct PersonBlock {
@@ -35,7 +38,6 @@ pub struct PersonBlock {
     pub after_ts_height: u8,
     unk8: u16,
     pub character_stats: PersonStats,
-    padding: u16
 }
 
 #[repr(C)]
@@ -65,6 +67,7 @@ pub enum PersonGender {
 }
 
 #[repr(u8)]
+#[derive(TryFromPrimitive)]
 pub enum Class
 {
     Noble,

@@ -8,13 +8,27 @@ pub mod fixed_persondata;
 pub struct FixedTable<'a, T, const N: usize> {
     vtable: *const (),
     pub entries: [FixedTableEntry<'a, T>; N],
-    bingz_entry: *const (),
-    table: *const T,
-    eos: *const ()
+    pub fixed_section: &'a FixedSection<T, N>,
+    pub section_entries: &'a [T; N],
+    end_of_section: *const u64
 }
 
 impl<'a, T, const N: usize> FixedTable<'a, T, N> {
     
+}
+
+#[repr(C)]
+pub struct FixedSection<T, const N: usize> {
+    pub header: FixedSectionHeader,
+    pub entries: [T; N],
+}
+
+#[repr(C)]
+pub struct FixedSectionHeader {
+    pub magic: [u8;4],
+    pub block_count: u32,
+    pub block_size: u32,
+    padding: [u8; 52],
 }
 
 // This can't enforce the strict array size of a FixedTable instance so this will have to go unused for now
